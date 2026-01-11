@@ -1,4 +1,7 @@
-/* Minimal, leggibile, senza dipendenze — Tema "beige archivio" */
+/* ==========================
+   Archivio – Style definitivo
+   Tema beige / leggibile / mobile-friendly
+   ========================== */
 
 :root{
   --bg:#f3efe6;          /* carta */
@@ -16,32 +19,31 @@
   --shadow:0 6px 18px rgba(0,0,0,.08);
 }
 
-*{box-sizing:border-box}
+*{ box-sizing:border-box; }
 
 html, body{
   background:var(--bg);
   color:var(--text);
   margin:0;
   padding:0;
-  overflow-x:hidden; /* blocca l'uscita orizzontale */
+  width:100%;
+  overflow-x:hidden;      /* mai scroll orizzontale */
+  overflow-y:auto;
 }
 
-/* Tipografia base: clamp per evitare “testo enorme” su mobile */
+/* Tipografia base: non enorme su mobile */
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  font-size: clamp(14px, 1.6vw, 16px);
+  font-size: 16px;
   line-height: 1.5;
 }
 
-/* Link: niente blu default */
-a{
-  color:var(--link);
-  text-decoration:none;
-}
+/* Link: niente blu browser */
+a{ color:var(--link); text-decoration:none; }
 a:visited{ color:var(--link); }
 a:hover{ color:var(--text); text-decoration:underline; }
 
-/* Top bar */
+/* ===== Top bar ===== */
 .topbar{
   display:flex;
   align-items:center;
@@ -49,31 +51,36 @@ a:hover{ color:var(--text); text-decoration:underline; }
   padding:12px 16px;
   border-bottom:1px solid var(--border);
   background:linear-gradient(180deg, var(--panel), var(--panel2));
-  position:sticky; top:0; z-index:10;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.brand{display:flex; align-items:center; gap:10px}
-.logo{font-size:20px}
-.title{font-weight:700}
+.brand{ display:flex; align-items:center; gap:10px; }
+.logo{ font-size:20px; }
+.title{ font-weight:700; }
 
 .topnav a{
   color:var(--muted);
-  text-decoration:none;
   margin-left:14px;
 }
-.topnav a:hover{color:var(--text)}
+.topnav a:hover{ color:var(--text); }
 
-/* Layout */
+/* ===== Layout ===== */
 .layout{
   display:grid;
   grid-template-columns: 320px 1fr;
   gap:14px;
   padding:14px;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width:1400px;
+  margin:0 auto;
 }
 
-/* Sidebar boxes */
+.sidebar, .content, .card, .box{
+  min-width:0; /* fondamentale per evitare overflow in grid */
+}
+
+/* ===== Sidebar boxes ===== */
 .sidebar .box{
   background:var(--panel);
   border:1px solid var(--border);
@@ -97,15 +104,16 @@ label{
 
 .hint{
   color:var(--muted);
-  font-size: 0.95em;
+  font-size:13px;
   line-height:1.4;
-  overflow-wrap:anywhere; /* impedisce uscita testo */
+  overflow-wrap:anywhere;
+  word-break:break-word;
 }
 
 /* Inputs */
 input[type="search"], select{
   width:100%;
-  padding:10px 10px;
+  padding:10px;
   border-radius:10px;
   border:1px solid var(--border);
   background:#fffaf0;
@@ -113,21 +121,21 @@ input[type="search"], select{
   outline:none;
   margin-bottom:10px;
 }
-input[type="search"]::placeholder{color:#8a7f70}
+input[type="search"]::placeholder{ color:#8a7f70; }
 
 /* Buttons */
 .btn{
   width:100%;
-  padding:10px 10px;
+  padding:10px;
   border-radius:10px;
   border:1px solid var(--border);
   background:#e3d7c2;
   color:var(--text);
   cursor:pointer;
 }
-.btn:hover{filter:brightness(0.98)}
+.btn:hover{ filter:brightness(0.98); }
 
-/* Fund list (sidebar): “rettangolini” distanziati */
+/* ===== Fund list (sidebar): rettangolini distanziati ===== */
 .fund-list{
   display:flex;
   flex-direction:column;
@@ -137,18 +145,18 @@ input[type="search"]::placeholder{color:#8a7f70}
   display:block;
   padding:10px 12px;
   border-radius:10px;
-  color:var(--text);
-  text-decoration:none;
-  border:1px solid var(--border);
   background:#fffaf0;
+  border:1px solid var(--border);
+  color:var(--text);
   font-size:16px;
-  font-weight:700;
+  font-weight:800;
 }
 .fund-list a:hover{
+  text-decoration:none;
   filter:brightness(0.99);
 }
 
-/* Content */
+/* ===== Content ===== */
 .content{
   background:var(--panel);
   border:1px solid var(--border);
@@ -158,9 +166,96 @@ input[type="search"]::placeholder{color:#8a7f70}
   box-shadow: var(--shadow);
 }
 
-.status{color:var(--muted); margin-bottom:10px}
+.status{
+  color:var(--muted);
+  margin-bottom:10px;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
 
-/* Tables */
+/* ===== Card ===== */
+.card{
+  border:1px solid var(--border);
+  background:var(--card);
+  border-radius:12px;
+  padding:14px;
+  box-shadow: var(--shadow);
+}
+
+.card h1{
+  margin:0 0 8px;
+  font-size:26px;
+  line-height:1.2;
+}
+
+/* testo descrizioni fondi: leggibile + mai fuori schermo */
+.fund-text{
+  white-space: pre-wrap;
+  max-width: 72ch;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+/* immagini descrizioni fondi: mai “poster” */
+.fund-photo{
+  display:block;
+  width:100%;
+  max-width:520px;      /* desktop: limite */
+  height:auto;
+  max-height:60vh;      /* non occupa tutto lo schermo */
+  object-fit:contain;
+  margin:10px 0;
+  border-radius:10px;
+  border:1px solid var(--border);
+}
+
+/* sicurezza: qualsiasi immagine in card */
+.card img{
+  max-width:100% !important;
+  width:auto;
+  height:auto !important;
+  max-height:60vh;
+  object-fit:contain;
+  display:block;
+}
+
+/* ===== Badges ===== */
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--badge-bg);
+  color:var(--badge-text);
+}
+.fund-badge{
+  font-size:15px;
+  font-weight:900;
+  padding:8px 12px;
+}
+
+/* ===== Meta grid ===== */
+.meta{
+  display:grid;
+  grid-template-columns: 160px 1fr;
+  gap:10px;
+  margin-top:10px;
+}
+.meta .k{ color:var(--muted); font-size:12px; }
+.meta .v{
+  color:var(--text);
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+/* ===== Tabelle (desktop) ===== */
 .grid{
   width:100%;
   border-collapse:collapse;
@@ -190,221 +285,94 @@ input[type="search"]::placeholder{color:#8a7f70}
 
 .grid a{
   color:var(--link);
-  text-decoration:none;
-  font-weight:600;
+  font-weight:700;
 }
-.grid a:hover{text-decoration:underline}
+.grid a:hover{ text-decoration:underline; }
 
-/* Badges */
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-.badge{
-  display:inline-flex;
-  align-items:center;
-  font-size:12px;
-  padding:6px 12px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:var(--badge-bg);
-  color:var(--badge-text);
-}
-
-/* Badge fondi nella HOME */
-.fund-badge{
-  font-size: 15px;
-  font-weight: 800;
-  padding: 8px 12px;
-}
-
-/* Card */
-.card{
-  border:1px solid var(--border);
-  background:var(--card);
-  border-radius:12px;
-  padding:14px;
-  box-shadow: var(--shadow);
-}
-.card h1{
-  margin:0 0 8px;
-  font-size: clamp(18px, 2.3vw, 26px);
-  line-height:1.2;
-}
-
-/* testo descrizioni fondi: leggibile e mai fuori schermo */
-.fund-text{
-  white-space: pre-wrap;
-  max-width: 72ch;
-  overflow-wrap:anywhere;
-  word-break: break-word;
-}
-
-/* immagini descrizioni fondi: MAI enormi */
-.fund-photo{
-  width:100%;
-  height:auto;
-  max-width: 420px;   /* desktop: limite vero */
-  margin: 10px 0;
-  display:block;
-  border-radius:10px;
-  border:1px solid var(--border);
-}
-
-/* Qualsiasi immagine nelle card: sicurezza */
-.card img{
-  max-width: 100% !important;
-  height: auto !important;
-  display:block;
-}
-
-/* Meta grid */
-.meta{
-  display:grid;
-  grid-template-columns: 160px 1fr;
-  gap:10px;
-  margin-top:10px;
-}
-.meta .k{color:var(--muted); font-size:12px}
-.meta .v{color:var(--text); overflow-wrap:anywhere; word-break:break-word}
-
-/* Footer */
+/* ===== Footer ===== */
 .footer{
   padding:10px 16px;
   color:var(--muted);
   border-top:1px solid var(--border);
-  background: var(--panel);
+  background:var(--panel);
 }
 
-/* ===== Mobile fix serio ===== */
+/* ==========================
+   MOBILE – FIX DEFINITIVO
+   (niente overflow, foto ok, tabella ok)
+   ========================== */
+
 @media (max-width: 768px){
 
   body{
-    font-size: 15px;
-    line-height: 1.45;
+    font-size:15px;
+    line-height:1.45;
   }
 
   .layout{
-    grid-template-columns: 1fr;
-    padding: 10px;
-    gap: 10px;
+    grid-template-columns:1fr;
+    padding:10px;
+    gap:10px;
   }
 
   /* content sopra, sidebar sotto */
-  .content{ order: 1; padding: 10px; min-height: auto; }
-  .sidebar{ order: 2; }
+  .content{ order:1; padding:8px; min-height:auto; }
+  .sidebar{ order:2; }
 
-  .topbar{ padding: 10px 12px; }
-  .title{ font-size: 16px; }
-  .topnav a{ margin-left: 10px; font-size: 14px; }
+  .topbar{ padding:10px 12px; }
+  .title{ font-size:16px; }
+  .topnav a{ margin-left:10px; font-size:14px; }
 
-  .card{ padding: 12px; }
-  .card h1{ font-size: 20px; line-height: 1.2; }
-
-  /* immagini: più piccole */
-  .fund-photo{ max-width: 240px; }
+  .card{ padding:10px; }
+  .card h1{ font-size:20px; }
 
   /* testo: piena larghezza */
-  .fund-text{ max-width: 100%; }
+  .fund-text{ max-width:100%; }
 
-  /* tabella scrollabile */
-  table.grid{
-    display:block;
-    width:100%;
-    overflow-x:auto;
-    -webkit-overflow-scrolling: touch;
+  /* immagini: dentro schermo e più basse */
+  .fund-photo,
+  .card img{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    max-height:55vh !important;
+    object-fit:contain !important;
   }
-  table.grid th, table.grid td{
-    white-space: nowrap;
+
+  /* TABELLONE libri: su mobile diventa “3 colonne” e titolo va a capo */
+  table.grid{
+    width:100% !important;
+    display:table !important;       /* Safari: meglio di block qui */
+    table-layout:fixed !important;  /* forza tutto dentro */
+  }
+
+  .grid th, .grid td{
+    white-space:normal !important;  /* niente righe infinite */
+    overflow-wrap:anywhere !important;
+    word-break:break-word !important;
+    font-size:14px !important;
+    padding:10px 8px !important;
+  }
+
+  /* Nascondi Tag e Codice su mobile */
+  .grid thead th:nth-child(4),
+  .grid tbody td:nth-child(4),
+  .grid thead th:nth-child(5),
+  .grid tbody td:nth-child(5){
+    display:none !important;
+  }
+
+  /* Distribuzione colonne rimaste */
+  .grid thead th:nth-child(1),
+  .grid tbody td:nth-child(1){ width:60% !important; }
+  .grid thead th:nth-child(2),
+  .grid tbody td:nth-child(2){ width:25% !important; }
+  .grid thead th:nth-child(3),
+  .grid tbody td:nth-child(3){
+    width:15% !important;
+    white-space:nowrap !important; /* anno compatto */
   }
 
   /* scheda libro: meta a colonna */
-  .meta{ grid-template-columns: 1fr; }
-}
-/* FIX definitivo: foto fondo mai gigantesca (desktop e mobile) */
-.card .fund-photo{
-  width: min(520px, 100%) !important;
-  max-width: min(520px, 100%) !important;
-  height: auto !important;
-  max-height: 60vh !important;   /* non occupa tutto lo schermo */
-  object-fit: contain !important;
-}
-
-/* Se per caso l'immagine non ha classe fund-photo */
-.card img{
-  width: auto;
-  max-width: 100% !important;
-  height: auto !important;
-  max-height: 60vh !important;
-  object-fit: contain;
-}
-/* ==========================
-   FIX MOBILE: niente roba fuori schermo + scroll ok
-   ========================== */
-
-/* 1) Mai bloccare lo scroll verticale */
-html, body{
-  height: auto !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;  /* blocca solo l'orizzontale */
-}
-
-/* 2) Qualsiasi contenitore non deve uscire dallo schermo */
-.layout, .content, .sidebar, .card, .box, .fund-text, .meta, .grid{
-  max-width: 100% !important;
-  min-width: 0 !important;
-}
-
-/* 3) Testo: spezza SEMPRE, niente righe infinite */
-.fund-text, .hint, .meta .v, .card, .content{
-  overflow-wrap: anywhere !important;
-  word-break: break-word !important;
-}
-
-/* 4) Immagini: mai oltre lo schermo */
-img, .fund-photo{
-  max-width: 100% !important;
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* 5) Tabelle: scroll orizzontale dentro la tabella (non nella pagina) */
-table.grid{
-  display: block !important;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch !important;
-  max-width: 100% !important;
-}
-table.grid th, table.grid td{
-  white-space: nowrap !important;
-}
-
-/* 6) Su mobile: layout a colonna e padding piccoli */
-@media (max-width: 768px){
-  .layout{
-    grid-template-columns: 1fr !important;
-    padding: 10px !important;
-    gap: 10px !important;
-  }
-  .content{
-    padding: 10px !important;
-    min-height: auto !important;
-  }
-  .sidebar{
-    padding: 0 !important;
-  }
-
-  .card{
-    padding: 12px !important;
-  }
-  .card h1{
-    font-size: 20px !important;
-    line-height: 1.2 !important;
-  }
-}
-/* ultimo colpo: se qualcosa blocca lo scroll su mobile */
-@media (max-width: 768px){
-  .topbar{ position: sticky !important; }
-  *{ touch-action: pan-y !important; }
+  .meta{ grid-template-columns:1fr; }
 }
