@@ -7,7 +7,6 @@
 
   <link rel="stylesheet" href="style.css?v=1">
 
-  <!-- PapaParse -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
@@ -38,18 +37,12 @@
         <div class="box-title">Filtri</div>
 
         <label for="authorFilter">Autore</label>
-        <select id="authorFilter">
-          <option value="">(tutti)</option>
-        </select>
+        <select id="authorFilter"><option value="">(tutti)</option></select>
 
         <label for="tagFilter">Tag</label>
-        <select id="tagFilter">
-          <option value="">(tutti)</option>
-        </select>
+        <select id="tagFilter"><option value="">(tutti)</option></select>
 
-        <button id="clearFilters" class="btn" type="button">
-          Azzera filtri
-        </button>
+        <button id="clearFilters" class="btn" type="button">Azzera filtri</button>
       </div>
 
       <div class="box">
@@ -69,8 +62,6 @@
     <span id="count"></span>
   </footer>
 
-  <!-- Il tuo script: UNA SOLA VOLTA -->
   <script src="app.js?v=1"></script>
-
 </body>
 </html>
