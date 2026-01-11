@@ -9,7 +9,6 @@
 const DATA_FILE = "archivio.csv";
 
 // Descrizioni dei fondi (chiavi = valore esatto della colonna "Fondo" nel CSV, senza spazi finali)
-// Qui NON metti HTML nel testo: metti solo testo + (opzionale) percorso immagine.
 const FUND_INFO = {
   "Venturati": {
     subtitle: "Fondo Venturati",
@@ -64,7 +63,6 @@ function splitTags(s) {
 }
 
 function splitAuthors(row) {
-  // prende tutte le colonne che iniziano con "Autore" (case-insensitive)
   const keys = Object.keys(row);
   const a = [];
   for (const k of keys) {
@@ -73,7 +71,6 @@ function splitAuthors(row) {
       if (v) a.push(v);
     }
   }
-  // fallback: qualsiasi colonna che contiene "autore"
   if (a.length === 0) {
     for (const k of keys) {
       if (k.toLowerCase().includes("autore")) {
@@ -88,6 +85,23 @@ function splitAuthors(row) {
 function setStatus(msg) {
   const s = el("status");
   if (s) s.textContent = msg;
+}
+
+function renderSidebarAbout() {
+  // Questo riempie un box nella sidebar con id="aboutBox"
+  const box = el("aboutBox");
+  if (!box) return;
+
+  box.innerHTML = `
+    <div class="box-title">Archivio</div>
+    <div class="hint" style="white-space:pre-wrap">
+Questo sito raccoglie i volumi dell’Archivio Storico Politico Carlo Venturati.
+I materiali sono organizzati per fondi (provenienza/donazione).
+    </div>
+    <div class="hint" style="margin-top:8px">
+      <b>Fondi:</b> ${FUNDS.map(f => escapeHtml(f)).join(", ")}
+    </div>
+  `;
 }
 
 function buildIndex() {
@@ -110,6 +124,9 @@ function buildIndex() {
       .map(f => `<a href="#/fondo/${encodeURIComponent(f)}">${escapeHtml(f)}</a>`)
       .join("");
   }
+
+  // Box descrizione archivio sopra "Fondi"
+  renderSidebarAbout();
 
   // Filtri
   const aSel = el("authorFilter");
@@ -154,22 +171,7 @@ function renderHome() {
   setStatus("");
   const view = el("view");
 
-  const aboutHtml = `
-    <div class="card">
-      <h1>Archivio</h1>
-      <p class="hint" style="white-space:pre-wrap">
-Questo sito raccoglie i volumi dell’Archivio Storico Politico Carlo Venturati.
-I materiali sono organizzati per fondi (provenienza/donazione). Puoi:
-- entrare in un fondo per sfogliare i libri
-- usare ricerca, filtro autore e tag
-      </p>
-      <div class="hint" style="margin-top:8px">
-        Fondi presenti: <b>${FUNDS.map(f => escapeHtml(f)).join(", ")}</b>
-      </div>
-    </div>
-  `;
-
-  const fundsHtml = `
+  view.innerHTML = `
     <div class="card">
       <h1>Fondi</h1>
       <p class="hint">Seleziona un fondo per sfogliare i libri. Puoi anche usare la ricerca a sinistra.</p>
@@ -178,8 +180,6 @@ I materiali sono organizzati per fondi (provenienza/donazione). Puoi:
       </div>
     </div>
   `;
-
-  view.innerHTML = aboutHtml + fundsHtml;
 
   const c = el("count");
   if (c) c.textContent = `${RECORDS.length} record totali`;
@@ -288,7 +288,6 @@ function parseRoute() {
   const h = location.hash || "#/";
   const parts = h.replace(/^#\//, "").split("/").filter(Boolean);
   if (parts.length === 0) return { name: "home" };
-  if (parts[0] === "fondi-info") return { name: "fondi-info" };
   if (parts[0] === "fondo") return { name: "fondo", fondo: decodeURIComponent(parts.slice(1).join("/")) };
   if (parts[0] === "libro") return { name: "libro", id: decodeURIComponent(parts.slice(1).join("/")) };
   return { name: "home" };
@@ -297,7 +296,6 @@ function parseRoute() {
 function render() {
   const route = parseRoute();
   if (route.name === "home") return renderHome();
-  if (route.name === "fondi-info") return renderFondiInfo();
   if (route.name === "fondo") return renderFund(route.fondo);
   if (route.name === "libro") return renderBook(route.id);
 }
@@ -360,7 +358,6 @@ async function loadData() {
     const autori = splitAuthors(row);
 
     const id = codice || ("row-" + Math.random().toString(36).slice(2));
-
     return { id, titolo, codice, tipo, volume, autori, anno, luogo, editore, tags, fondo };
   }).filter(r => r.titolo || r.codice);
 
