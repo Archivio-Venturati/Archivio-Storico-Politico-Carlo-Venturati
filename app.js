@@ -138,6 +138,52 @@ function renderHome() {
   setStatus("");
   const view = el("view");
 
+  const hasQuery =
+    norm(el("q")?.value) ||
+    norm(el("authorFilter")?.value) ||
+    norm(el("tagFilter")?.value);
+
+  // risultati globali (q + autore + tag)
+  const filtered = applyFilters(RECORDS);
+
+  // Se c'è filtro attivo: aggiorna le tendine per far vedere solo opzioni utili
+  // (senza rompere: se l'opzione selezionata non è più valida, resta comunque selezionata)
+  if (hasQuery) {
+    const authorSet = new Set();
+    const tagSet = new Set();
+    for (const r of filtered) {
+      for (const a of r.autori) authorSet.add(a);
+      for (const t of r.tags) tagSet.add(t);
+    }
+
+    const currentA = norm(el("authorFilter")?.value);
+    const currentT = norm(el("tagFilter")?.value);
+
+    const aSel = el("authorFilter");
+    const tSel = el("tagFilter");
+
+    const aList = [...authorSet].sort((a,b)=>a.localeCompare(b,"it"));
+    const tList = [...tagSet].sort((a,b)=>a.localeCompare(b,"it"));
+
+    if (aSel) {
+      aSel.innerHTML =
+        `<option value="">(tutti)</option>` +
+        aList.map(a => `<option value="${escapeAttr(a)}">${escapeHtml(a)}</option>`).join("");
+      if (currentA) aSel.value = currentA; // ripristina selezione
+    }
+
+    if (tSel) {
+      tSel.innerHTML =
+        `<option value="">(tutti)</option>` +
+        tList.map(t => `<option value="${escapeAttr(t)}">${escapeHtml(t)}</option>`).join("");
+      if (currentT) tSel.value = currentT; // ripristina selezione
+    }
+  } else {
+    // se non c'è filtro attivo, ripristina index completo (tutte opzioni)
+    // (evita che restino "strozzate" dopo una ricerca)
+    buildIndex();
+  }
+
   const aboutHtml = `
     <div class="card">
       <h1>Archivio</h1>
@@ -153,7 +199,7 @@ Puoi:
   `;
 
   const fundsHtml = `
-    <div class="card">
+    <div class="card" style="margin-top:12px">
       <h1>Fondi</h1>
       <p class="hint">Seleziona un fondo per sfogliare i libri. Puoi anche usare la ricerca a sinistra.</p>
       <div class="badges" style="margin-top:10px">
@@ -162,7 +208,37 @@ Puoi:
     </div>
   `;
 
-  view.innerHTML = aboutHtml + fundsHtml;
+  const resultsHtml = hasQuery ? `
+    <div class="card" style="margin-top:12px">
+      <h1>Risultati</h1>
+      <div class="hint">${filtered.length} record trovati</div>
+
+      <table class="grid" style="margin-top:12px">
+        <thead>
+          <tr>
+            <th>Titolo</th>
+            <th>Autore</th>
+            <th>Anno</th>
+            <th>Fondo</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${filtered.slice(0, 200).map(r => `
+            <tr>
+              <td><a href="#/libro/${encodeURIComponent(r.id)}">${escapeHtml(r.titolo)}</a></td>
+              <td>${escapeHtml(r.autori.join("; "))}</td>
+              <td>${escapeHtml(r.anno)}</td>
+              <td><a href="#/fondo/${encodeURIComponent(r.fondo)}">${escapeHtml(r.fondo)}</a></td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+
+      ${filtered.length > 200 ? `<div class="hint" style="margin-top:10px">Mostro solo i primi 200 risultati. Raffina la ricerca.</div>` : ``}
+    </div>
+  ` : ``;
+
+  view.innerHTML = aboutHtml + fundsHtml + resultsHtml;
 
   const c = el("count");
   if (c) c.textContent = `${RECORDS.length} record totali`;
