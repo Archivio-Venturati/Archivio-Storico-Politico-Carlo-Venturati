@@ -339,3 +339,67 @@ input[type="search"]::placeholder{color:#8a7f70}
   max-height: 60vh !important;
   object-fit: contain;
 }
+/* ==========================
+   FIX MOBILE: niente roba fuori schermo + scroll ok
+   ========================== */
+
+/* 1) Mai bloccare lo scroll verticale */
+html, body{
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;  /* blocca solo l'orizzontale */
+}
+
+/* 2) Qualsiasi contenitore non deve uscire dallo schermo */
+.layout, .content, .sidebar, .card, .box, .fund-text, .meta, .grid{
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* 3) Testo: spezza SEMPRE, niente righe infinite */
+.fund-text, .hint, .meta .v, .card, .content{
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* 4) Immagini: mai oltre lo schermo */
+img, .fund-photo{
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* 5) Tabelle: scroll orizzontale dentro la tabella (non nella pagina) */
+table.grid{
+  display: block !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  max-width: 100% !important;
+}
+table.grid th, table.grid td{
+  white-space: nowrap !important;
+}
+
+/* 6) Su mobile: layout a colonna e padding piccoli */
+@media (max-width: 768px){
+  .layout{
+    grid-template-columns: 1fr !important;
+    padding: 10px !important;
+    gap: 10px !important;
+  }
+  .content{
+    padding: 10px !important;
+    min-height: auto !important;
+  }
+  .sidebar{
+    padding: 0 !important;
+  }
+
+  .card{
+    padding: 12px !important;
+  }
+  .card h1{
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+  }
+}
