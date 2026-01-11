@@ -382,4 +382,10 @@ input[type="search"]::placeholder{ color:#8a7f70; }
   text-align: justify;
   hyphens: auto;
 }
+/* Desktop: testo più largo (mobile invariato) */
+@media (min-width: 900px){
+  .fund-text{
+    max-width: 110ch;   /* prima era 70ch */
+  }
+}
 
