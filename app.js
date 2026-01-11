@@ -141,24 +141,9 @@ function applyFilters(list){
 function renderHome(){
   setStatus("");
   const view = el("view");
- const info = FUND_INFO[fondo];
-const infoHtml = info
-  ? `<div class="card" style="margin-bottom:12px">
-       <h1>${escapeHtml(fondo)}</h1>
-       <div class="hint">${escapeHtml(info.subtitle || "")}</div>
-       <p style="margin-top:10px; white-space:pre-wrap">${escapeHtml(info.text || "")}</p>
-     </div>`
-  : `<div class="card" style="margin-bottom:12px">
-       <h1>${escapeHtml(fondo)}</h1>
-       <div class="hint">Descrizione del fondo non ancora inserita.</div>
-     </div>`;
-
-view.innerHTML = `
-  ${infoHtml}
-  <div class="card">
-    <div class="hint">Clicca un titolo per aprire la scheda. Usa filtri e ricerca a sinistra.</div>
-    ...
-`;
+  view.innerHTML = `
+    <div class="card">
+      <h1>Fondi</h1>
       <p class="hint">Seleziona un fondo per sfogliare i libri. Puoi anche usare la ricerca a sinistra.</p>
       <div class="badges" style="margin-top:10px">
         ${FUNDS.map(f=>`<a class="badge" href="#/fondo/${encodeURIComponent(f)}">${escapeHtml(f)}</a>`).join("")}
@@ -167,6 +152,7 @@ view.innerHTML = `
   `;
   el("count").textContent = `${RECORDS.length} record totali`;
 }
+
 
 function renderFondiInfo(){
   setStatus("");
@@ -228,6 +214,7 @@ function renderFund(fondo){
       </table>
     </div>
   `;
+  el("count").textContent = `${inFund.length} nel fondo “${fondo}”`;
 }
 
 function renderBook(id){
@@ -239,6 +226,7 @@ function renderBook(id){
     return;
   }
   setStatus("");
+  setStatus(`Fondo: ${fondo} — ${filtered.length}/${inFund.length} record`);
   view.innerHTML = `
     <div class="card">
       <h1>${escapeHtml(r.titolo)}</h1>
