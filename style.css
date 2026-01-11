@@ -322,3 +322,20 @@ input[type="search"]::placeholder{color:#8a7f70}
   /* scheda libro: meta a colonna */
   .meta{ grid-template-columns: 1fr; }
 }
+/* FIX definitivo: foto fondo mai gigantesca (desktop e mobile) */
+.card .fund-photo{
+  width: min(520px, 100%) !important;
+  max-width: min(520px, 100%) !important;
+  height: auto !important;
+  max-height: 60vh !important;   /* non occupa tutto lo schermo */
+  object-fit: contain !important;
+}
+
+/* Se per caso l'immagine non ha classe fund-photo */
+.card img{
+  width: auto;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 60vh !important;
+  object-fit: contain;
+}
