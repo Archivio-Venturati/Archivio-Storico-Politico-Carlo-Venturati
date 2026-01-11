@@ -186,11 +186,24 @@ function renderFund(fondo){
   const inFund = RECORDS.filter(r=>r.fondo === fondo);
   const filtered = applyFilters(inFund);
 
-  setStatus(`Fondo: ${fondo} — ${filtered.length}/${inFund.length} record`);
+  const key = (fondo || "").trim();
+  const info = FUND_INFO[key];
+
   view.innerHTML = `
     <div class="card">
       <h1>${escapeHtml(fondo)}</h1>
-      <div class="hint">Clicca un titolo per aprire la scheda. Usa filtri e ricerca a sinistra.</div>
+
+      ${
+        info
+          ? `<div class="hint">${escapeHtml(info.subtitle || "")}</div>
+             <p style="margin-top:10px; white-space:pre-wrap">${escapeHtml(info.text || "")}</p>`
+          : `<div class="hint">Descrizione del fondo non ancora inserita.</div>`
+      }
+
+      <div class="hint" style="margin-top:12px">
+        Clicca un titolo per aprire la scheda. Usa filtri e ricerca a sinistra.
+      </div>
+
       <table class="grid" style="margin-top:12px">
         <thead>
           <tr>
@@ -215,7 +228,6 @@ function renderFund(fondo){
       </table>
     </div>
   `;
-  el("count").textContent = `${inFund.length} nel fondo “${fondo}”`;
 }
 
 function renderBook(id){
