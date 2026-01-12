@@ -6,7 +6,7 @@
 // CSV consigliato (intestazioni):
 // Titolo, Codice, Tipo, Volume, Autore1.., Anno (o "Anno di pubblicazione"), Luogo, Editore, Tags, Fondo, PDF
 
-const DATA_FILE = "archivio.csv";
+const DATA_FILE = "Archivio.csv";
 
 // Info fondi: chiavi = valore esatto della colonna "Fondo" nel CSV (senza spazi finali)
 const FUND_INFO = {
