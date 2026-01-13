@@ -409,5 +409,13 @@ img.thumb{
   border:1px solid var(--border);
   box-shadow: var(--shadow);
 }
+table.grid img{
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
 
 
