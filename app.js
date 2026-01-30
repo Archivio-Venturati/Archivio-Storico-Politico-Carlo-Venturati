@@ -42,7 +42,7 @@ Nella maggior parte è costituito da documentazione interna e organizzativa o ma
   "Rossoni":  { subtitle: "Fondo Rossoni",  text: `Scrivi qui la descrizione.` },
   "Crapabela":  { subtitle: "Fondo Crapabela",  text: `Giuseppe Pisoni, detto "Crapabela", è stato segretario politico del Partito Comunista Italiano - Sezione di Caravaggio negli anni dell'acquisto e sistemazione della Casa del Popolo. È stato lui e il suo gruppo, quindi, il primo a credere in questo progetto comunitario.
   
-  Il fondo è costituito soprattutto di documentazione interna ed esterna del Partito Comunista Italiano - Sezione di Caravaggio e da materiale fotografico.` },
+Il fondo è costituito soprattutto di documentazione interna ed esterna del Partito Comunista Italiano - Sezione di Caravaggio e da materiale fotografico.` },
   "Democratici":  { subtitle: "Fondo del Partito Democratico - Circolo di Caravaggio",  text: `Il fondo è fra quelli più eterogenei in possesso dell'Archivio. È costituito per la maggior parte da materiale fotografico, documentazione organizzativa, documentazione elettorale ed estratti di giornali. 
   
 Il Circolo del Partito Democratico si è costituito a Caravaggio nel 2008, un anno dopo la sua fondazione nazionale. Si costituisce dalla fusione fra i militanti della Margherita e quelli dei Democratici di Sinistra, i quali, questi ultimi, detenevano parte della proprietà della Casa del Popolo. Per questo motivo è il Partito che ancora abita la nostra Casa, e che ha reso possibile il mantenimento della sua vitalità anche negli anni più difficili dopo la chiusura delle attività del Circolo Arci. 
@@ -224,7 +224,7 @@ function renderHome() {
         <div class="stat">
           <div class="k">Record</div>
           <div class="v">${total}</div>
-          <div class="p">Materiali catalogati e consultabili in sede. La sistemazione è in corso.</div>
+          <div class="p">Materiali catalogati e consultabili online o in sede. La sistemazione è in corso di ultimazione</div>
         </div>
 
         <a class="stat clickable" href="#/archivio" style="display:block; color:inherit; text-decoration:none">
@@ -233,10 +233,10 @@ function renderHome() {
           <div class="p">Raccolte organizzate per provenienza/donazione. Clicca per aprire l’Archivio.</div>
         </a>
 
-        <div class="stat">
-          <div class="k">Consultazione</div>
-          <div class="v">Su appuntamento</div>
-          <div class="p">Casa del Popolo di Caravaggio (BG) — via Fermo Stella 10</div>
+        <a class="stat clickable" href="#/storia" style="display:block; color:inherit; text-decoration:none">
+          <div class="k">La nostra storia</div>
+          <div class="v">50 anni di Casa del Popolo</div>
+          <div class="p">Dalla casa del PCI alla rigenerazione di una comunità</div>
         </div>
       </div>
 
@@ -245,15 +245,17 @@ function renderHome() {
           <summary>Il progetto</summary>
           <div class="acc-body">
             Questo sito raccoglie i volumi, i documenti, le fotografie e i manifesti dell’Archivio Storico-Politico “Carlo Venturati”.
-            L’Archivio inizia a comporsi nel 2023 su impulso delle realtà che animano la Casa del Popolo, a seguito della donazione del fondo Venturati.
+            La finalità è recuperare e conservare materiali (libri, documenti, foto, manifesti) utili a mantenere viva la memoria storica e culturale
+            della sinistra a Caravaggio e nella Bassa bergamasca.
           </div>
         </details>
 
         <details>
           <summary>Cos’è l’Archivio</summary>
           <div class="acc-body">
-            La finalità è recuperare e conservare materiali (libri, documenti, foto, manifesti) utili a mantenere viva la memoria storica e culturale
-            della sinistra a Caravaggio e nella Bassa bergamasca.
+            L'Archivio inizia a comporsi nel 2023 su impulso di Amici della Festa de L'Unità di Caravaggio, Partito Democratico - Circolo di Caravaggio e Circolo Arci di Caravaggio a seguito della donazione del fondo Venturati, da cui prende il nome.
+            Principalmente, raccoglie fondi provenienti da militanti, associazioni culturali, forze politiche e personalità politiche.
+            Se hai un fondo affine ai nostri e vuoi renderlo pubblicamente consultabile, scrivici!
           </div>
         </details>
 
@@ -269,8 +271,7 @@ function renderHome() {
         <details>
           <summary>Disclaimer</summary>
           <div class="acc-body">
-            Immagini e documenti sono pubblicati ai soli fini di documentazione storica e culturale.
-            Su richiesta oscuriamo fotografie che ritraggono persone identificabili.
+            l'Archivio raccoglie anche materiale fotografico rinvenuto alla Casa del Popolo o donato da privati afferenti a realtà politiche. Si tratta di immagini di momenti di vita politica. Abbiamo deciso di caricare tutte le immagini che raffigurano certamente momenti di vita politica <i>collettiva</i>, mentre per quelle raffiguranti un primo piano che non abbiamo a che fare con materiale elettorale abbiamo lasciato solo i metadati. Tuttavia, se qualcuno volesse oscurare una fotografia che lo ritrae, non esiti a contattarci. Immagini e documenti sono pubblicati ai soli fini di documentazione storica e culturale.</b> 
           </div>
         </details>
       </div>
