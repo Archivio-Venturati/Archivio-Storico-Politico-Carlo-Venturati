@@ -208,6 +208,7 @@ function renderHome() {
   const fondiCount = FUNDS.length;
 
   const heroImg = HERO_IMAGE;
+
   view.innerHTML = `
     <div class="hero-photo">
       ${heroImg ? `<img src="${escapeAttr(heroImg)}" alt="" onerror="this.remove()">` : ``}
@@ -237,7 +238,7 @@ function renderHome() {
           <div class="k">La nostra storia</div>
           <div class="v">50 anni di Casa del Popolo</div>
           <div class="p">Dalla casa del PCI alla rigenerazione di una comunità</div>
-        </div>
+        </a>
       </div>
 
       <div class="accordion" style="margin-top:14px">
@@ -269,20 +270,19 @@ function renderHome() {
         </details>
 
         <details>
-  <summary>Disclaimer</summary>
-  <div class="acc-body">
-    L'Archivio raccoglie anche materiale fotografico rinvenuto alla Casa del Popolo o donato da privati afferenti a realtà politiche.
-    Si tratta di immagini di momenti di vita politica. Abbiamo deciso di caricare tutte le immagini che raffigurano certamente momenti di vita politica
-    <i>collettiva</i>, mentre per quelle raffiguranti un primo piano che non abbiamo a che fare con materiale elettorale abbiamo lasciato solo i metadati.
-    Tuttavia, se qualcuno volesse oscurare una fotografia che lo ritrae, non esiti a contattarci.
-    Immagini e documenti sono pubblicati ai soli fini di documentazione storica e culturale.
-  </div>
-</details>
+          <summary>Disclaimer</summary>
+          <div class="acc-body">
+            L'Archivio raccoglie anche materiale fotografico rinvenuto alla Casa del Popolo o donato da privati afferenti a realtà politiche.
+            Si tratta di immagini di momenti di vita politica. Abbiamo deciso di caricare tutte le immagini che raffigurano certamente momenti di vita politica
+            <i>collettiva</i>, mentre per quelle raffiguranti un primo piano che non abbiamo a che fare con materiale elettorale abbiamo lasciato solo i metadati.
+            Tuttavia, se qualcuno volesse oscurare una fotografia che lo ritrae, non esiti a contattarci.
+            Immagini e documenti sono pubblicati ai soli fini di documentazione storica e culturale.
+          </div>
+        </details>
       </div>
     </div>
   `;
 
-  // IMPORTANTISSIMO: non scrivere #count in home
   const c = el("count");
   if (c) c.textContent = "";
 }
