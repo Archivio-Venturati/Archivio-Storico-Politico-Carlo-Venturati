@@ -470,3 +470,51 @@ body.is-home .content{
   .topsearch{ order:3; width:100%; }
   #topQ{ width:100%; }
 }
+/* ==========================
+   HOME: HERO full-width
+   ========================== */
+body.is-home .layout{
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  padding: 0;              /* niente bordo laterale */
+  gap: 0;
+}
+
+body.is-home .content{
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;              /* la hero gestisce margini da sola */
+  background: transparent;
+}
+
+/* hero senza "box": occupa tutta la larghezza */
+.hero-photo{
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: none;
+}
+
+.hero-photo img{
+  width:100%;
+  height: clamp(260px, 42vh, 480px);
+  object-fit: cover;
+  display:block;
+  filter: contrast(1.05) saturate(.9) brightness(.85);
+}
+
+/* overlay testo in foto */
+.hero-caption{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding: 18px 22px;
+  background: linear-gradient(180deg, transparent 15%, rgba(0,0,0,.80));
+}
+
+body.is-home .home-inner{
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 14px;           /* padding solo ai contenuti sotto la foto */
+}
+body.is-home .footer{ display:none; }
