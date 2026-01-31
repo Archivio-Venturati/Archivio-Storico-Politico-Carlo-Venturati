@@ -1104,3 +1104,17 @@ table, th, td {
   font-size: 0.8rem;
   color: #888;
 }
+/* Default (mobile / tablet): resta come ora */
+main.content .card.prose {
+  max-width: 100%;
+  padding: 16px;
+}
+
+/* Solo su schermi grandi (desktop) */
+@media (min-width: 900px) {
+  main.content .card.prose {
+    max-width: 900px;   /* ← qui controlli la larghezza */
+    margin: 0 auto;
+    padding: 24px;
+  }
+}
