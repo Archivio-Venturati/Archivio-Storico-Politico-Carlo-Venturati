@@ -1043,3 +1043,10 @@ table, th, td {
   height: 32px;   /* regola qui la dimensione */
   width: auto;
 }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; /* toglie la sottolineatura */
+  color: inherit;        /* mantiene il colore del testo */
+}
