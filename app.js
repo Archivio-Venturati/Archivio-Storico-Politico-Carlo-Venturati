@@ -648,7 +648,7 @@ const hasQuery = forceAll || !!(q || a || t);
       ${heroImg ? `<img src="${escapeAttr(heroImg)}" alt="" onerror="this.remove()">` : ``}
       <div class="cap">
         <h1>Archivio Storico-Politico Carlo Venturati</h1>
-        <p>Libri, documenti, fotografie e manifesti per ricostruire la memoria politica e culturale di Caravaggio e della Bassa Bergamasca.</p>
+        <p>Libri, documenti, fotografie e manifesti per ricostruire la memoria politica e culturale di Caravaggio e della Bassa Bergamasca</p>
       </div>
     </div>
   `;
