@@ -1,20 +1,13 @@
 const DATA_FILE = "Archivio.csv";
 const HERO_IMAGE = "images/PCI/Crapabela/05.8.PISFES.jpg";
-const CASA_DEL_POPOLO_STORIA = `
-<h1>Casa del Popolo di Caravaggio</h1>
 
-<p class="lead">
-Storia...
-</p>
-
-`;
 
 const FUND_INFO = {
   "Venturati": {
     subtitle: "Fondo Venturati",
     image: "images/carlo_venturati.jpg",
     text: `Carlo Venturati nacque a Caravaggio il 21/7/1921.
-Nel 1940, iscritto al primo anno della facoltà di chimica, venne chiamato sotto le armi. Fatto prigioniero in Albania, a Durazzo, il 10/9/1943, deportato in Austria, Polonia e Germania, il 7/4/1945 a Stahle venne liberato dalla 9A armata americana. Solo il 13/9/1945 fece ritorno a Caravaggio con negli occhi e nella mente gli orrori della guerra, della prigionia, della deportazione e subito si iscrisse al Partito Socialista Italiano.
+Nel 1940, iscritto al primo anno della facoltà di chimica, venne chiamato a servire sotto le armi. Fu fatto prigioniero in Albania, a Durazzo, il 10 settembre del '43, e deportato in Austria, Polonia e Germania. Solo il 7 parile 1945 venne liberato a Stahle dalla 9A armata americana. Solo il 13/9/1945 fece ritorno a Caravaggio con negli occhi e nella mente gli orrori della guerra, della prigionia, della deportazione e subito si iscrisse al Partito Socialista Italiano.
 Cambiò anche corso di studi e già nel marzo del 1948 si laureò in giurisprudenza presso l’Università degli Studi di Milano per poi intraprendere la professione di avvocato.
 Per circa trent’anni, dal 1952, fu consigliere comunale prima a Caravaggio e poi a Treviglio, dove era andato a risiedere con la famiglia, e occupò posti chiave nel PSI: consigliere provinciale, segretario della Sezione di Treviglio, segretario della Federazione di Bergamo, membro dei probi viri del partito.
 Morì in Spagna, improvvisamente, l’11 maggio 1984, durante una breve vacanza.
@@ -234,7 +227,7 @@ function renderHome() {
           <div class="p">Raccolte organizzate per provenienza/donazione. Clicca per aprire l’Archivio.</div>
         </a>
 
-        <a class="stat clickable" href="#/storia" style="display:block; color:inherit; text-decoration:none">
+        <a class="stat clickable" href="casadelpopolo.html" style="display:block; color:inherit; text-decoration:none">
           <div class="k">La nostra storia</div>
           <div class="v">50 anni di Casa del Popolo</div>
           <div class="p">Dalla casa del PCI alla rigenerazione di una comunità</div>
@@ -361,13 +354,7 @@ ${(() => {
   if (c) c.textContent = `${inFund.length} nel fondo “${key}”`;
 }
 
-function renderStoria() {
-  setStatus("");
-  const view = el("view");
-  view.innerHTML = `<div class="card prose">${CASA_DEL_POPOLO_STORIA}</div>`;
-  const c = el("count");
-  if (c) c.textContent = "";
-}
+
 
 function renderBook(id) {
   const r = RECORDS.find(x => x.id === id);
@@ -481,7 +468,6 @@ function parseRoute() {
   if (parts.length === 0) return { name: "home" };
   if (parts[0] === "fondo") return { name: "fondo", fondo: decodeURIComponent(parts.slice(1).join("/")) };
   if (parts[0] === "libro") return { name: "libro", id: decodeURIComponent(parts.slice(1).join("/")) };
-  if (parts[0] === "storia") return { name: "storia" };
   if (parts[0] === "archivio") return { name: "archivio" };
   return { name: "home" };
 }
@@ -496,7 +482,6 @@ function render() {
   if (route.name === "archivio") return renderArchivio();
   if (route.name === "fondo") return renderFund(route.fondo);
   if (route.name === "libro") return renderBook(route.id);
-  if (route.name === "storia") return renderStoria();
   return renderHome();
 }
 
