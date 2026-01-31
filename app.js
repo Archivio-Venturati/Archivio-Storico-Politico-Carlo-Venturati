@@ -390,7 +390,7 @@ function renderBook(id) {
       ${metaRow("Autore/i", r.autori?.length ? r.autori.join("; ") : "")}
       ${metaRow("Anno", r.anno)}
       ${metaRow("Luogo", r.luogo)}
-      ${metaRow("Collocazione", r.Collocazione)}
+      ${metaRow("Collocazione", r.collocazione)}
       ${metaRow("Editore", r.editore)}
     </div>
   `.trim();
