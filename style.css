@@ -1133,17 +1133,28 @@ main.content .card.prose {
   }
 }
 
-.ring-card {
-  background: linear-gradient(
-    180deg,
-    var(--panelHi),
-    var(--panel2)
-  );
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 16px;
+/* ===== HOME: 3 diagrammi patrimonio ===== */
+.rings {
+  display: grid;
+  gap: 16px;
+  margin-top: 14px;
+  grid-template-columns: 1fr;
 }
 
+@media (min-width: 900px) {
+  .rings {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ring-card {
+  background: linear-gradient(180deg, var(--panel), var(--panel2));
+  border-radius: var(--radius); /* = 0, come le altre box */
+  padding: 16px;
+  box-shadow: var(--shadowSoft);
+}
+
+/* layout interno */
 .ring {
   display: grid;
   grid-template-columns: 92px 1fr;
@@ -1151,25 +1162,31 @@ main.content .card.prose {
   align-items: center;
 }
 
+/* cerchio esterno */
 .ring-circle {
   width: 92px;
   height: 92px;
   border-radius: 50%;
-  /* --p è un numero 0..1 */
-  background:
-    conic-gradient(#fff calc(var(--p) * 1turn), rgba(255,255,255,0.18) 0);
   position: relative;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset;
+
+  /* anello: parte bianca + parte scura */
+  background:
+    conic-gradient(
+      #fff calc(var(--p) * 1turn),
+      rgba(255,255,255,0.15) 0
+    );
 }
 
+/* buco centrale = stesso colore della box */
 .ring-circle::after {
   content: "";
   position: absolute;
-  inset: 14px;   /* anello più sottile */
+  inset: 16px;              /* spessore anello */
   border-radius: 50%;
-  background: transparent;
+  background: linear-gradient(180deg, var(--panel), var(--panel2));
 }
 
+/* testi */
 .ring-meta .k {
   font-size: 12px;
   letter-spacing: .12em;
@@ -1180,7 +1197,7 @@ main.content .card.prose {
 
 .ring-meta .v {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.1;
 }
 
