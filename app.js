@@ -35,7 +35,7 @@ Nella maggior parte è costituito da documentazione interna e organizzativa o ma
 Il fondo è costituito principalmente di materiale interno dell'organizzazione comunista e riferito alla gestione della sede.
 Struttura del fondo:
   I. Faldone "Sede" (1968-1985)
-      1. fascicolo "Gestione sede. Varie
+      1. fascicolo "Gestione sede. Varie"
       2. fascicolo "Documentazioni di privati. Varie"
       3. fascicolo "Documentazione tecnica riguardante la ristrutturazione della Casa del Popolo"
       4. fascicolo "Acquisto della Casa del Popolo da parte del PCI - Sezione di Caravaggio"
