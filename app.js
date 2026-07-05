@@ -67,8 +67,8 @@ Struttura del fondo:
   VI. Faldone "Propaganda"
     1. fascicolo "Giornata della Liberazione"
     2. fascicolo "Elezioni provinciali del 2004"
-    3. fascicolo "Materiale elettorale vario"
-  },`
+    3. fascicolo "Materiale elettorale vario"`
+  },
   
 
   "A01 - PCI - Sezione di Caravaggio": { subtitle: "Fondo del Partito Comunista Italiano - Sezione di Caravaggio", text: `Si tratta del fondo che raccoglie i documenti prodotto dalla sezione caravaggina del PCI, ritrovati durante la risitemazione della Casa del Popolo.
