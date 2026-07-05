@@ -51,15 +51,25 @@ Struttura del fondo:
     3. fascicolo "Festa de L'Unità"
     4. fascicolo "Corrispondenza"
     5. fascicolo "Gestione ordinaria"
+    6. fascicolo "Verso il PD"
   III. Faldone "Amministrazione"
     1. fascicolo "Scuola Libera di Masano"
+    2. fascicolo "I fatti e le opinioni"
     3. fascicolo "Attività amministrativa generale"
     4. fascicolo "Attività amministrativa sovralocale"
   IV. Faldone "Elezioni del 2001"
     1. fascicolo "Materiale de L'Ulivo per Caravaggio"
     2. fascicolo "Burocrazia"
-    3. fascicolo "Documenti interni"`
-  },
+    3. fascicolo "Documenti interni"
+    4. fascicolo "Altri materiali elettorali del 2001"
+  V. Faldone "Elezioni del 2006"
+    1. fascicolo "Materiale de Per Caravaggio - Partecipazione e Solidarietà"
+  VI. Faldone "Propaganda"
+    1. fascicolo "Giornata della Liberazione"
+    2. fascicolo "Elezioni provinciali del 2004"
+    3. fascicolo "Materiale elettorale vario"
+  },`
+  
 
   "A01 - PCI - Sezione di Caravaggio": { subtitle: "Fondo del Partito Comunista Italiano - Sezione di Caravaggio", text: `Si tratta del fondo che raccoglie i documenti prodotto dalla sezione caravaggina del PCI, ritrovati durante la risitemazione della Casa del Popolo.
   
@@ -69,9 +79,16 @@ Struttura del fondo:
   "Castelli": { subtitle: "Fondo Castelli", text: `Scrivi qui la descrizione.` },
    "A06 - PDS - Sezione di Caravaggio": { subtitle: "Fondo del Partito Democratico della Sinistra", text: `Nato a seguito della svolta della Bolognina (1991), il PDS raccogliere l'eredità del Partito Comunista, di cui mantiene il simbolo nel logo. Il fondo è stato costituito raccogliendo la documentazione lasciata in sede dalla sezione caravaggina e recuperata durante i lavori di ristrutturazione.
    Struttura del fondo:
-     I. Faldone "Elezioni del 1993"
+      I. Faldone "Elezioni del 1993"
         1. fascicolo "Politica caravaggina"
-        2. fascicolo "Materiale elettorale"` },
+        2. fascicolo "Materiale elettorale"
+      II. Faldone "Organizzazione"
+        1. fascicolo "Gestione interna"
+      III. Faldone "Elezioni del 1993"
+        1. fascicolo "Materiale elettorale"
+      IV. Faldone "Propaganda"
+        1. fascicolo "Materiale elettorale del PDS di Caravaggio"
+        ` },
   "10 - Manzoni": { subtitle: "Fondo 'Lucia Manzoni'", text: `Lucia Manzoni è stata segretaria cittadina del Partito Comunista Italiano - Sezione di Caravaggio, ma soprattuto ha avuto un ruolo importante per la comunità comunista come presidente della Cooperativa Radio Stella.
   Il fondo è costituito in larghissima parte da materiale fotografico riguardante i funerali dell'Onorevole Achille Stuani del 1976.
   Struttura del fondo:
@@ -147,6 +164,7 @@ Il Circolo del Partito Democratico si è costituito a Caravaggio nel 2008, un an
 Diverse Segretarie e Segretari si sono succeduti negli anni, dando il nome ai faldoni.
   Struttura del fondo:
   I. Faldone "Mirko Grassi" (2008-2009)
+    1. fascicolo "Costituente del PD"
   II. Faldone "Silvia Stuani" (2009-2013)
     1. fascicolo "Rassegna stampa"
     2. fascicolo "Propaganda"
