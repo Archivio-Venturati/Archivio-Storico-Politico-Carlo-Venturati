@@ -84,7 +84,7 @@ Struttura del fondo:
         2. fascicolo "Materiale elettorale"
       II. Faldone "Organizzazione"
         1. fascicolo "Gestione interna"
-      III. Faldone "Elezioni del 1993"
+      III. Faldone "Elezioni del 1997"
         1. fascicolo "Materiale elettorale"
       IV. Faldone "Propaganda"
         1. fascicolo "Materiale elettorale del PDS di Caravaggio"
