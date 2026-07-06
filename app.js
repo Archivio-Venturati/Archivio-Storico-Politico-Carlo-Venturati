@@ -560,7 +560,7 @@ const ringHtml = (label, count, total, desc, link) => {
         <a class="stat clickable" href="#/archivio" style="display:block; color:inherit; text-decoration:none">
           <div class="k">Fondi</div>
           <div class="v">${fondiCount}</div>
-          <div class="p">Raccolte organizzate per provenienza/donazione. Clicca per aprire l’Archivio</div>
+          <div class="p">navigabili su 15 acquisiti. I fondi sono organizzati per provenienza. L'archiviazione è completa per 5 fondi</div>
         </a>
 
         <a class="stat clickable" href="casadelpopolo.html" style="display:block; color:inherit; text-decoration:none">
