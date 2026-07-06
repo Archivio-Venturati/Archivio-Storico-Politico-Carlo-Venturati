@@ -6,7 +6,7 @@ const FUND_INFO = {
     subtitle: "Fondo 'Carlo Venturati'",
     image: "images/carlo_venturati.jpg",
     text: `Carlo Venturati nacque a Caravaggio il 21 luglio 1921.
-Nel 1940, iscritto al primo anno della facoltà di chimica, venne chiamato a servire sotto le armi. Fu fatto prigioniero in Albania, a Durazzo, il 10 settembre del '43, e deportato in Austria, Polonia e Germania. Solo il 7 parile 1945 venne liberato a Stahle dalla 9A armata americana. Solo il 13/9/1945 fece ritorno a Caravaggio con negli occhi e nella mente gli orrori della guerra, della prigionia, della deportazione e subito si iscrisse al Partito Socialista Italiano.
+(Biblioteca e archiviazione non conclusa) Nel 1940, iscritto al primo anno della facoltà di chimica, venne chiamato a servire sotto le armi. Fu fatto prigioniero in Albania, a Durazzo, il 10 settembre del '43, e deportato in Austria, Polonia e Germania. Solo il 7 parile 1945 venne liberato a Stahle dalla 9A armata americana. Solo il 13/9/1945 fece ritorno a Caravaggio con negli occhi e nella mente gli orrori della guerra, della prigionia, della deportazione e subito si iscrisse al Partito Socialista Italiano.
 Cambiò anche corso di studi e già nel marzo del 1948 si laureò in giurisprudenza presso l’Università degli Studi di Milano per poi intraprendere la professione di avvocato.
 Per circa trent’anni, dal 1952, fu consigliere comunale prima a Caravaggio e poi a Treviglio, dove era andato a risiedere con la famiglia, e occupò posti chiave nel PSI: consigliere provinciale, segretario della Sezione di Treviglio, segretario della Federazione di Bergamo, membro dei probi viri del partito.
 Morì in Spagna, improvvisamente, l’11 maggio 1984, durante una breve vacanza.
@@ -25,7 +25,7 @@ Il fondo è composto da materiale librario quasi esclusivamente di stampo politi
   "A03 - PSI - Sezione 'Emilio Gallavresi'": {
     subtitle: "Fondo del Partito Socialista Italiano - Sezione 'Emilio Gallavresi' di Caravaggio",
     image: "images/circuli.jpeg",
-    text: `Il fondo Gallavresi rappresenta il lascito alla Casa del Popolo da parte della Cooperativa dei Lavoratori di Caravaggio e del Circolo "Gallavresi" di Caravaggio del Partito Socialista Italiano. 
+    text: `(Biblioteca e archiviazione non conclusa) Il fondo Gallavresi rappresenta il lascito alla Casa del Popolo da parte della Cooperativa dei Lavoratori di Caravaggio e del Circolo "Gallavresi" di Caravaggio del Partito Socialista Italiano. 
 I Socialisti hanno rappresentato una parte fondamentale della storia politica e culturale di Caravaggio. Fin dalla fine del XIX secolo, infatti, Caravaggio è stata un terreno molto fertile per le idee del socialismo. Nelle sue campagne, già nel 1897 nasce la Lega di resistenza contadina e nel 1898 la Lega dei muratori. 
 Nel Novecento, fu soprattutto grazie alla costruzione nel 1956 e gestione del Circulì che fino al 2023 la Cooperativa diviene punto di riferimento per la cultura socialdemocratica della Bassa Bergamasca. 
 Il Circolo socialista, attivo fino ai primi anni '10 del 2000, è intitolato all'Onorevole Emilio Gallavresi (1856-1931), figura di spicco del socialismo italiano e deputato con il PSI per due legislature. La sua famiglia fu proprietaria dell'attuale Palazzo Comunale.`
@@ -33,12 +33,12 @@ Il Circolo socialista, attivo fino ai primi anni '10 del 2000, è intitolato all
 
   "A07 - AFU - Caravaggio": {
     subtitle: "Fondo di Amici della Festa de L'Unità di Caravaggio",
-    text: `Si tratta del fondo che contiene i materiali rinvenuti nella Casa del Popolo e che non possono essere connessi direttamente all'attività di una unica associazione politica.
+    text: `(Biblioteca e archiviazione non conclusa) Si tratta del fondo che contiene i materiali rinvenuti nella Casa del Popolo e che non possono essere connessi direttamente all'attività di una unica associazione politica.
 Nella maggior parte è costituito da documentazione interna e organizzativa o materiale elettorale, ma anche da libri editi di vario genere. Il riferimento nel nome del fondo è all'associazione che attualmente detiene parte della proprietà della Casa del Popolo e gestisce direttamente l'Archivio, Amici della Festa de L'Unità di Caravaggio, fondata nel 2007 per conservare la memoria della tradizione comunista.`
  },
 "A04 - DS - Unità di Base di Caravaggio": {
     subtitle: "Fondo dei Democratici di Sinistra - Unità di Base di Caravaggio",
-    text:`Si tratta del fondo che conserva la documentazione dell'Unità di Base dei Democratici di Sinistra attiva a Caravaggio. Il partito è stato fondato nel 1998 ed è rimasto attivo fino al 2007, quando è confluito insieme alla Margherita nel Partito Democratico. È stato il principale partito di opposizione alla giunta leghista di Pirovano, dal 1997 al 2006.
+    text:`(Archiviazione non conclusa) Si tratta del fondo che conserva la documentazione dell'Unità di Base dei Democratici di Sinistra attiva a Caravaggio. Il partito è stato fondato nel 1998 ed è rimasto attivo fino al 2007, quando è confluito insieme alla Margherita nel Partito Democratico. È stato il principale partito di opposizione alla giunta leghista di Pirovano, dal 1997 al 2006.
 Struttura del fondo:
   I. Faldone "Materiale Elettorale"
     1. fascicolo "Lega Nord"
@@ -71,7 +71,7 @@ Struttura del fondo:
   },
   
 
-  "A01 - PCI - Sezione di Caravaggio": { subtitle: "Fondo del Partito Comunista Italiano - Sezione di Caravaggio", text: `Si tratta del fondo che raccoglie i documenti prodotto dalla sezione caravaggina del PCI, ritrovati durante la risitemazione della Casa del Popolo.
+  "A01 - PCI - Sezione di Caravaggio": { subtitle: "Fondo del Partito Comunista Italiano - Sezione di Caravaggio", text: `(Archiviazione non conclusa) Si tratta del fondo che raccoglie i documenti prodotto dalla sezione caravaggina del PCI, ritrovati durante la risitemazione della Casa del Popolo.
   
   Struttura del fondo: 
     I. Faldone 'Propaganda'
@@ -114,7 +114,7 @@ Struttura del fondo:
   "Stuani":   { subtitle: "Fondo 'Achille Stuani'",   text: `Scrivi qui la descrizione.` },
   "A05 - Circolo Arci di Caravaggio":   { subtitle: "Fondo del Circolo Arci di Caravaggio",   
              image: "images/arcistella.jpeg",
-             text: `Il Circolo Arci di Caravaggio viene fondato nel 1985 su impulso politico della sezione locale del PCI. Da allora è stato punto di riferimento culturale per la Città di Caravaggio, soprattutto grazie allo storico Presidente Carlo Proverbio che l'ha guidato per quasi quarant'anni fino al 2024. Dopo anni di stagnazione a causa della chiusura del bar e tesseramenti che superavano di poco la soglia di legge per rimanere aperti, prima con Mirko Gatti, e poi ora con Ilaria Bena, il Circolo è stato rivitalizzato attraverso il progetto Arci Stella, contando attualmente oltre 200 iscritte e iscritti. Il fondo è composto soprattutto da materiale fotografico e documentazione interna di gestione del Circolo.
+             text: `(Archiviazione non conclusa) Il Circolo Arci di Caravaggio viene fondato nel 1985 su impulso politico della sezione locale del PCI. Da allora è stato punto di riferimento culturale per la Città di Caravaggio, soprattutto grazie allo storico Presidente Carlo Proverbio che l'ha guidato per quasi quarant'anni fino al 2024. Dopo anni di stagnazione a causa della chiusura del bar e tesseramenti che superavano di poco la soglia di legge per rimanere aperti, prima con Mirko Gatti, e poi ora con Ilaria Bena, il Circolo è stato rivitalizzato attraverso il progetto Arci Stella, contando attualmente oltre 200 iscritte e iscritti. Il fondo è composto soprattutto da materiale fotografico e documentazione interna di gestione del Circolo.
   Struttura del fondo:
   I. Faldone fotografico "Gite"
       1. fascicolo "Valeggio sul Mincio"
@@ -134,7 +134,7 @@ Struttura del fondo:
   "Rossoni":  { subtitle: "Fondo Francesco Rossoni",  text: `Scrivi qui la descrizione.` },
   "05 - Crapabela":  { subtitle: "Fondo 'Giuseppe Crapabela Pisoni'",  
                  image: "images/05.8.FOT.5.B.jpg",
-                 text: `Giuseppe Pisoni (1935-2021), detto "Crapabela", è stato segretario politico del Partito Comunista Italiano - Sezione di Caravaggio negli anni Settanta. È fra i principali dirigenti del gruppo che decise di acquistare l'ex fabbrica di cappelli di proprietà degli eredi di Francesco Tadolti in via Fermo Stella. Saranno, dunque, lui e Paolo Pavesi ad assumersi la proprietà della Casa del Popolo con una scrittura privata nel 1968, dato che la sezione non ha personalità giuridica.  
+                 text: `(Archiviazione non conclusa) Giuseppe Pisoni (1935-2021), detto "Crapabela", è stato segretario politico del Partito Comunista Italiano - Sezione di Caravaggio negli anni Settanta. È fra i principali dirigenti del gruppo che decise di acquistare l'ex fabbrica di cappelli di proprietà degli eredi di Francesco Tadolti in via Fermo Stella. Saranno, dunque, lui e Paolo Pavesi ad assumersi la proprietà della Casa del Popolo con una scrittura privata nel 1968, dato che la sezione non ha personalità giuridica.  
 Il fondo è costituito soprattutto di documentazione interna ed esterna del Partito Comunista Italiano - Sezione di Caravaggio e da materiale fotografico.
 Struttura del fondo:
   I. Faldone "PCI"
@@ -158,7 +158,7 @@ Struttura del fondo:
 ` },
   "A02 - PD - Circolo di Caravaggio":  { subtitle: "Fondo del Partito Democratico - Circolo di Caravaggio",  
                     image: "images/PD.jpeg",
-                   text: `Il fondo è fra quelli più eterogenei in possesso dell'Archivio. È costituito per la maggior parte da materiale fotografico, documentazione organizzativa, documentazione elettorale ed estratti di giornali. 
+                   text: `(Archiviazione non conclusa) Il fondo è costituito per la maggior parte da materiale fotografico, documentazione organizzativa, documentazione elettorale ed estratti di giornali. 
   
 Il Circolo del Partito Democratico si è costituito a Caravaggio nel 2008, un anno dopo la sua fondazione nazionale. Si costituisce dalla fusione fra i militanti della Margherita e quelli dei Democratici di Sinistra, i quali, questi ultimi, detenevano parte della proprietà della Casa del Popolo. 
 Diverse Segretarie e Segretari si sono succeduti negli anni, dando il nome ai faldoni.
@@ -180,8 +180,12 @@ Diverse Segretarie e Segretari si sono succeduti negli anni, dando il nome ai fa
     1. fascicolo "Elezioni del 2021"
     2. fascicolo "Varie"
   VI. Faldone "Mirko Gatti" (2021-
-      1. fascicolo "caso Tura"
-      2. fascicolo "materiale elettorale di altri partiti"`}
+      1. fascicolo "Caso Tura"
+      2. fascicolo "Gestione interna"
+      3. fascicolo "Corrispondenza esterna"
+      4. fascicolo "Stampa"
+      5. fascicolo "Varie"
+      6. fascicolo "Documenti interni"`}
 };
 
 let RECORDS = [];
