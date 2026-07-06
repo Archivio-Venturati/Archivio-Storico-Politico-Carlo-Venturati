@@ -554,7 +554,7 @@ const ringHtml = (label, count, total, desc, link) => {
         <a class="stat clickable" href="#/archivio?all=1" style="display:block; color:inherit; text-decoration:none">
   <div class="k">Record</div>
   <div class="v">${total}</div>
-  <div class="p">Materiali catalogati e consultabili online o in sede. La sistemazione è in corso di ultimazione</div>
+  <div class="p">su diverse migliaia ancora di cui ultimare la catalogazione, costituiti da libri, documenti, fotografie, manifesti, bandiere e oggetti. I materiali catalogati sono consultabili online o in sede</div>
 </a>
 
         <a class="stat clickable" href="#/archivio" style="display:block; color:inherit; text-decoration:none">
