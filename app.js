@@ -379,7 +379,7 @@ const ringHtml = (label, count, total, desc, link) => {
         <a class="stat clickable" href="#/archivio" style="display:block; color:inherit; text-decoration:none">
           <div class="k">Fondi</div>
           <div class="v">${fondiCount}</div>
-          <div class="p">navigabili su 15 acquisiti. I fondi sono organizzati per provenienza. L'archiviazione è completa per 5 fondi</div>
+          <div class="p">di cui 13 navigabili. I fondi sono organizzati per provenienza. L'archiviazione è completa per 5 fondi</div>
         </a>
 
         <a class="stat clickable" href="casadelpopolo.html" style="display:block; color:inherit; text-decoration:none">
@@ -940,12 +940,19 @@ const hasQuery = forceAll || !!(q || a || t || tipo);
     counts.set(f, (counts.get(f) || 0) + 1);
   }
 
-  function fundTeaser(name) {
-    const info = FUND_INFO?.[name];
-    const raw = (info?.text || "").toString().trim().replace(/\s+/g, " ");
-    if (!raw) return "Descrizione in preparazione.";
-    return raw.length > 140 ? raw.slice(0, 140).trim() + "…" : raw;
-  }
+ function fundTeaser(name) {
+  const info = FUND_INFO?.[name];
+  const raw = (info?.text || "").toString().trim();
+
+  if (!raw) return "Descrizione in preparazione.";
+
+  const clean = raw
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return clean.length > 140 ? clean.slice(0, 140).trim() + "…" : clean;
+}
 
   const hero = `
     <div class="archive-hero">
