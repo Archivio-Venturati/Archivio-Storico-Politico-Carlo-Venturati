@@ -93,8 +93,11 @@ function setStatus(msg) {
 }
 
 function buildIndex() {
-  FUNDS = [...new Set(RECORDS.map(r => r.fondo).filter(Boolean))]
-    .sort((a, b) => a.localeCompare(b, "it"));
+const recordFunds = RECORDS.map(r => r.fondo).filter(Boolean);
+const infoFunds = Object.keys(FUND_INFO).filter(Boolean);
+
+FUNDS = [...new Set([...recordFunds, ...infoFunds])]
+  .sort((a, b) => a.localeCompare(b, "it"));
 
   const authorSet = new Set();
   const tagSet = new Set();
