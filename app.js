@@ -1,192 +1,8 @@
 const DATA_FILE = "Archivio.csv";
+const FUND_FILE = "Fondi.csv";
 const HERO_IMAGE = "images/PCI/Crapabela/05.8.PISFES.jpg";
 
-const FUND_INFO = {
-  "01 - Venturati": {
-    subtitle: "Fondo 'Carlo Venturati'",
-    image: "images/carlo_venturati.jpg",
-    text: `(Biblioteca e archiviazione non conclusa) Carlo Venturati nacque a Caravaggio il 21 luglio 1921.
-Nel 1940, iscritto al primo anno della facoltà di chimica, venne chiamato a servire sotto le armi. Fu fatto prigioniero in Albania, a Durazzo, il 10 settembre del '43, e deportato in Austria, Polonia e Germania. Solo il 7 parile 1945 venne liberato a Stahle dalla 9A armata americana. Solo il 13/9/1945 fece ritorno a Caravaggio con negli occhi e nella mente gli orrori della guerra, della prigionia, della deportazione e subito si iscrisse al Partito Socialista Italiano.
-Cambiò anche corso di studi e già nel marzo del 1948 si laureò in giurisprudenza presso l’Università degli Studi di Milano per poi intraprendere la professione di avvocato.
-Per circa trent’anni, dal 1952, fu consigliere comunale prima a Caravaggio e poi a Treviglio, dove era andato a risiedere con la famiglia, e occupò posti chiave nel PSI: consigliere provinciale, segretario della Sezione di Treviglio, segretario della Federazione di Bergamo, membro dei probi viri del partito.
-Morì in Spagna, improvvisamente, l’11 maggio 1984, durante una breve vacanza.
-
-Il fondo è stato donato dalla famiglia di Carlo Venturati. Il fondo è il più consistente posseduto dall'Archivio che, infatti, è intitolato a Venturati in quanto si tratta del primo vero fondo acquisito. È costituito per la maggior parte di opere edite di stampo politico e filosofico-politico, soprattutto sul tema del socialismo italiano.`
-  },
-"04 - Rossoni":  { subtitle: "Fondo Francesco Rossoni", 
-                  image: "https://res.cloudinary.com/dlygg64d1/image/upload/v1774119629/A02.8.TUA.1.ZZZE_ejwom7.jpg",
-                  text: `Francesco Rossoni (1940-2024) è stato un importante dirigente della Sezione del PCI di Caravaggio fin in gioventù. Ha ricoperto ruoli come segretario di sottosezione e responsabile della Festa dell'Unità. È fra i pochi che hanno vissuto tutti i cambiamenti della Casa del Popolo, passando attraverso tutti i partiti figli del PCI.
-Il fondo è composto da patrimonio librario donato dalla sua famiglia, che, come lui, continua ad essere punto di riferimento della Casa.` },
- "03 - Castelli":  { subtitle: "Fondo Angelo Castelli", 
-                    image: "images/Castelli.jpg",
-                    text: `Angelo Castelli (1928-2017) è stato il Sindaco di Caravaggio per oltre 30 anni (1956-1976, 1978-1983, 1988-1991), imponendosi come il principale rappresentante della Democrazia Cristiana. È stato Deputato della Repubblica Italiana dal 1968 al 1976 e Senatore dal 1976 al 1987. Sono memorabili i suoi scontri, anche legali, con Stuani prima, e Pisoni poi.
-Il fondo è composto da materiale librario quasi esclusivamente di stampo politico, donato dalla figlia alla Casa del Popolo.` },
-  
-  "A03 - PSI - Sezione 'Emilio Gallavresi'": {
-    subtitle: "Fondo del Partito Socialista Italiano - Sezione 'Emilio Gallavresi' di Caravaggio",
-    image: "images/circuli.jpeg",
-    text: `(Biblioteca e archiviazione non conclusa) Il fondo Gallavresi rappresenta il lascito alla Casa del Popolo da parte della Cooperativa dei Lavoratori di Caravaggio e del Circolo "Gallavresi" di Caravaggio del Partito Socialista Italiano. 
-I Socialisti hanno rappresentato una parte fondamentale della storia politica e culturale di Caravaggio. Fin dalla fine del XIX secolo, infatti, Caravaggio è stata un terreno molto fertile per le idee del socialismo. Nelle sue campagne, già nel 1897 nasce la Lega di resistenza contadina e nel 1898 la Lega dei muratori. 
-Nel Novecento, fu soprattutto grazie alla costruzione nel 1956 e gestione del Circulì che fino al 2023 la Cooperativa diviene punto di riferimento per la cultura socialdemocratica della Bassa Bergamasca. 
-Il Circolo socialista, attivo fino ai primi anni '10 del 2000, è intitolato all'Onorevole Emilio Gallavresi (1856-1931), figura di spicco del socialismo italiano e deputato con il PSI per due legislature. La sua famiglia fu proprietaria dell'attuale Palazzo Comunale.`
-  },
-
-  "A07 - AFU - Caravaggio": {
-    subtitle: "Fondo di Amici della Festa de L'Unità di Caravaggio",
-    text: `(Biblioteca e archiviazione non conclusa) Si tratta del fondo che contiene i materiali rinvenuti nella Casa del Popolo e che non possono essere connessi direttamente all'attività di una unica associazione politica.
-Nella maggior parte è costituito da documentazione interna e organizzativa o materiale elettorale, ma anche da libri editi di vario genere. Il riferimento nel nome del fondo è all'associazione che attualmente detiene parte della proprietà della Casa del Popolo e gestisce direttamente l'Archivio, Amici della Festa de L'Unità di Caravaggio, fondata nel 2007 per conservare la memoria della tradizione comunista.`
- },
-"A04 - DS - Unità di Base di Caravaggio": {
-    subtitle: "Fondo dei Democratici di Sinistra - Unità di Base di Caravaggio",
-    text:`(Archiviazione non conclusa) Si tratta del fondo che conserva la documentazione dell'Unità di Base dei Democratici di Sinistra attiva a Caravaggio. Il partito è stato fondato nel 1998 ed è rimasto attivo fino al 2007, quando è confluito insieme alla Margherita nel Partito Democratico. È stato il principale partito di opposizione alla giunta leghista di Pirovano, dal 1997 al 2006.
-Struttura del fondo:
-  I. Faldone "Materiale Elettorale"
-    1. fascicolo "Lega Nord"
-    2. fascicolo "Rifondazione Comunista"
-    3. fascicolo "Altri partiti"
-    4. fascicolo "Varie"
-  II. Faldone "Gestione interna"
-    1. fascicolo "Convocazioni del Comitato Direttivo"
-    2. fascicolo "Verbali del Comitato Direttivo"
-    3. fascicolo "Festa de L'Unità"
-    4. fascicolo "Corrispondenza"
-    5. fascicolo "Gestione ordinaria"
-    6. fascicolo "Verso il PD"
-  III. Faldone "Amministrazione"
-    1. fascicolo "Scuola Libera di Masano"
-    2. fascicolo "I fatti e le opinioni"
-    3. fascicolo "Attività amministrativa generale"
-    4. fascicolo "Attività amministrativa sovralocale"
-  IV. Faldone "Elezioni del 2001"
-    1. fascicolo "Materiale de L'Ulivo per Caravaggio"
-    2. fascicolo "Burocrazia"
-    3. fascicolo "Documenti interni"
-    4. fascicolo "Altri materiali elettorali del 2001"
-  V. Faldone "Elezioni del 2006"
-    1. fascicolo "Materiale de Per Caravaggio - Partecipazione e Solidarietà"
-  VI. Faldone "Propaganda"
-    1. fascicolo "Giornata della Liberazione"
-    2. fascicolo "Elezioni provinciali del 2004"
-    3. fascicolo "Materiale elettorale vario"`
-  },
-  
-
-  "A01 - PCI - Sezione di Caravaggio": { subtitle: "Fondo del Partito Comunista Italiano - Sezione di Caravaggio", text: `(Archiviazione non conclusa) Si tratta del fondo che raccoglie i documenti prodotto dalla sezione caravaggina del PCI, ritrovati durante la risitemazione della Casa del Popolo.
-  
-  Struttura del fondo: 
-    I. Faldone 'Propaganda'
-      1. fascicolo 'Coordinamento donne del PCI'` },
-  "Castelli": { subtitle: "Fondo Castelli", text: `Scrivi qui la descrizione.` },
-   "A06 - PDS - Sezione di Caravaggio": { subtitle: "Fondo del Partito Democratico della Sinistra", text: `Nato a seguito della svolta della Bolognina (1991), il PDS raccogliere l'eredità del Partito Comunista, di cui mantiene il simbolo nel logo. Il fondo è stato costituito raccogliendo la documentazione lasciata in sede dalla sezione caravaggina e recuperata durante i lavori di ristrutturazione.
-   Struttura del fondo:
-      I. Faldone "Elezioni del 1993"
-        1. fascicolo "Politica caravaggina"
-        2. fascicolo "Materiale elettorale"
-      II. Faldone "Organizzazione"
-        1. fascicolo "Gestione interna"
-      III. Faldone "Elezioni del 1997"
-        1. fascicolo "Materiale elettorale"
-      IV. Faldone "Propaganda"
-        1. fascicolo "Materiale elettorale del PDS di Caravaggio"
-        ` },
-  "10 - Manzoni": { subtitle: "Fondo 'Lucia Manzoni'", text: `Lucia Manzoni è stata segretaria cittadina del Partito Comunista Italiano - Sezione di Caravaggio, ma soprattuto ha avuto un ruolo importante per la comunità comunista come presidente della Cooperativa Radio Stella.
-  Il fondo è costituito in larghissima parte da materiale fotografico riguardante i funerali dell'Onorevole Achille Stuani del 1976.
-  Struttura del fondo:
-  I. Faldone fotografico "Funerali di Stuani"
-      1. fascicolo "Funerali di Stuani"
-      2. fascicolo "Funerali di Stuani-bis"
-      3. fascicolo "Funerali di Stuani-tris"
-      4. fascicolo "Torneo di calcio"
-      5. fascicolo "Funerali di Stuani-quatris"
-      6. fascicolo "Funerali di Stuani-cinquis"
-      7. fascicolo "Manifestazioni"
-      ` },
-  "08 - Ogliari": { subtitle: "Fondo 'Domenico Ogliari'", text: `Domenico Ogliari è stato per anni un importante dirigente del Partito Comunista Italiano - sezione di Caravaggio. Ha ricoperto, principalmente, mansioni di contabilità, come la tesoreria del Partito e la gestione dell'Immobiliare Stella 80, una delle realtà che hanno avuto la proprietà della Casa del Popolo. È, quindi, tra le persone che hanno avuto un ruolo fondamentale nel mantenere questo sogno vivo.
-Il fondo è costituito principalmente di materiale interno dell'organizzazione comunista e riferito alla gestione della sede.
-Struttura del fondo:
-  I. Faldone "Sezione" (1968-1985)
-      1. fascicolo "Gestione sede. Varie"
-      2. fascicolo "Documentazioni di privati. Varie"
-      3. fascicolo "Documentazione tecnica riguardante la ristrutturazione della Casa del Popolo"
-      4. fascicolo "Acquisto della Casa del Popolo da parte del PCI - Sezione di Caravaggio"
-      
-      `},
-  "Stuani":   { subtitle: "Fondo 'Achille Stuani'",   text: `Scrivi qui la descrizione.` },
-  "A05 - Circolo Arci di Caravaggio":   { subtitle: "Fondo del Circolo Arci di Caravaggio",   
-             image: "images/arcistella.jpeg",
-             text: `(Archiviazione non conclusa) Il Circolo Arci di Caravaggio viene fondato nel 1985 su impulso politico della sezione locale del PCI. Da allora è stato punto di riferimento culturale per la Città di Caravaggio, soprattutto grazie allo storico Presidente Carlo Proverbio che l'ha guidato per quasi quarant'anni fino al 2024. Dopo anni di stagnazione a causa della chiusura del bar e tesseramenti che superavano di poco la soglia di legge per rimanere aperti, prima con Mirko Gatti, e poi ora con Ilaria Bena, il Circolo è stato rivitalizzato attraverso il progetto Arci Stella, contando attualmente oltre 200 iscritte e iscritti. Il fondo è composto soprattutto da materiale fotografico e documentazione interna di gestione del Circolo.
-  Struttura del fondo:
-  I. Faldone fotografico "Gite"
-      1. fascicolo "Valeggio sul Mincio"
-      2. fascicolo "Lago d'Iseo"
-      3. fascicolo "Piacentino"
-      4. fascicolo "Po"
-      5. fascicolo "Lago Maggiore"
-      6. fascicolo "Sirmione"
-      7. fascicolo "Pranzo sociale"
-      8. fascicolo "Astigiano"
-      9. fascicolo "Piacentino-bis"
-      10. fascicolo "Varie"
-  II. Faldone fotografico "Sede Sociale"
-      1. fascicolo "Esterno"
-      2. fascicolo "Ristrutturazione"
-      ` },
-  "Rossoni":  { subtitle: "Fondo Francesco Rossoni",  text: `Scrivi qui la descrizione.` },
-  "05 - Crapabela":  { subtitle: "Fondo 'Giuseppe Crapabela Pisoni'",  
-                 image: "images/05.8.FOT.5.B.jpg",
-                 text: `(Archiviazione non conclusa) Giuseppe Pisoni (1935-2021), detto "Crapabela", è stato segretario politico del Partito Comunista Italiano - Sezione di Caravaggio negli anni Settanta. È fra i principali dirigenti del gruppo che decise di acquistare l'ex fabbrica di cappelli di proprietà degli eredi di Francesco Tadolti in via Fermo Stella. Saranno, dunque, lui e Paolo Pavesi ad assumersi la proprietà della Casa del Popolo con una scrittura privata nel 1968, dato che la sezione non ha personalità giuridica.  
-Il fondo è costituito soprattutto di documentazione interna ed esterna del Partito Comunista Italiano - Sezione di Caravaggio e da materiale fotografico.
-Struttura del fondo:
-  I. Faldone "PCI"
-      1. fascicolo "Documentazione del Consiglio Comunale"
-      2. fascicolo "Vita comunista"
-      3. fascicolo "Candidatura di Pisoni alle provinciali"
-      4. fascicolo "Attività politico-amministrative"
-      5. fascicolo "Caso Gambirasio"
-      6. fascicolo "Alleanze amministrative"
-      7. fascicolo "Documentazione interna del Partito"
-      8. fascicolo "Varie"
-      9. fascicolo "Sede"
-  II. Faldone "Fotografico"
-      1. fascicolo "Ristrutturazione"
-      2. fascicolo "Varie"
-      3. fascicolo "Scontro Pisoni-Castelli"
-      4. fascicolo "Manifesti"
-      5. fascicolo "Persone"
-      6. fascicolo "Festa de L'Unità"
-      7. fascicolo "Provini"
-` },
-  "A02 - PD - Circolo di Caravaggio":  { subtitle: "Fondo del Partito Democratico - Circolo di Caravaggio",  
-                    image: "images/PD.jpeg",
-                   text: `(Archiviazione non conclusa) Il fondo è costituito per la maggior parte da materiale fotografico, documentazione organizzativa, documentazione elettorale ed estratti di giornali. 
-  
-Il Circolo del Partito Democratico si è costituito a Caravaggio nel 2008, un anno dopo la sua fondazione nazionale. Si costituisce dalla fusione fra i militanti della Margherita e quelli dei Democratici di Sinistra, i quali, questi ultimi, detenevano parte della proprietà della Casa del Popolo. 
-Diverse Segretarie e Segretari si sono succeduti negli anni, dando il nome ai faldoni.
-  Struttura del fondo:
-  I. Faldone "Mirko Grassi" (2008-2009)
-    1. fascicolo "Costituente del PD"
-  II. Faldone "Silvia Stuani" (2009-2013)
-    1. fascicolo "Rassegna stampa"
-    2. fascicolo "Propaganda"
-    3. fascicolo "Corrispondenza"
-    4. fascicolo "Varie"
-    5. fascicolo "Elezioni del 2011"
-  III. Faldone "Elezioni del 2011"
-      1. fascicolo fotografico
-  IV. Faldone "Mara Carminati" (2013-2018)
-    1. fascicolo "Varie"
-    2. fascicolo "Elezioni del 2016"
-  V. Faldone "Juri Cattelani" (2018-2021)
-    1. fascicolo "Elezioni del 2021"
-    2. fascicolo "Varie"
-  VI. Faldone "Mirko Gatti" (2021-
-      1. fascicolo "Caso Tura"
-      2. fascicolo "Gestione interna"
-      3. fascicolo "Corrispondenza esterna"
-      4. fascicolo "Stampa"
-      5. fascicolo "Varie"
-      6. fascicolo "Documenti interni"`}
-};
+let FUND_INFO = {};
 
 let RECORDS = [];
 let FUNDS = [];
@@ -734,7 +550,9 @@ view.innerHTML = `
             return full ? `
               <details class="fund-details">
                 <summary>Storia e descrizione</summary>
-                <div class="fund-text">${escapeHtml(full)}</div>
+                <div class="fund-text">
+  ${escapeHtml(full).replaceAll("\n", "<br>")}
+</div>
               </details>
             ` : ``;
           })()}
@@ -991,7 +809,20 @@ async function loadData() {
   }
 
   const csvText = await res.text();
+const fundRes = await fetch(FUND_FILE, { cache: "no-store" });
 
+if (!fundRes.ok) {
+  setStatus(`Errore: non trovo ${FUND_FILE}.`);
+  return;
+}
+
+const fundCsv = await fundRes.text();
+
+const parsedFunds = Papa.parse(fundCsv, {
+  header: true,
+  skipEmptyLines: true,
+  dynamicTyping: false,
+});
   const parsed = Papa.parse(csvText, {
     header: true,
     skipEmptyLines: true,
@@ -1033,7 +864,17 @@ async function loadData() {
 
     return { id, titolo, codice, tipo, volume, autori, anno, luogo, editore, tags, fondo, pdf, immagine, collocazione,faldone, disclaimer };
   }).filter(r => r.titolo || r.codice);
+FUND_INFO = {};
 
+parsedFunds.data.forEach(row => {
+  const fondo = norm(row.fondo);
+
+  FUND_INFO[fondo] = {
+    subtitle: norm(row.subtitle),
+    image: norm(row.image),
+    text: norm(row.text)
+  };
+});
   buildIndex();
   wireEvents();
   render();
