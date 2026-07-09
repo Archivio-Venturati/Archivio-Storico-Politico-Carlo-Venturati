@@ -554,7 +554,7 @@ view.innerHTML = `
               <details class="fund-details">
                 <summary>Storia e descrizione</summary>
                 <div class="fund-text">
-  ${escapeHtml(full).replaceAll("\n", "<br>")}
+ ${full.replaceAll("\n", "<br>")}
 </div>
               </details>
             ` : ``;
